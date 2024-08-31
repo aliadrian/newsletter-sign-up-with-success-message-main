@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="stylesheet" href="style_succes_message.css" />
+  </head>
+  <body>
+    <div class="thanks-content">
+      <div class="content">
+        <div class="padding">
+          <ul role="list" class="checkmark-list">
+            <li></li>
+          </ul>
+          <h1 class="title-thanks">Thanks for subscribing!</h1>
+          <p>
+            A confirmation email has been sent to
+            <span id="userEmail"></span>. Please open it and click the button
+            inside to confirm your subscription.
+          </p>
+        </div>
+        <div class="bottom-button">
+          <button class="button" type="button">Dismiss message</button>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://portfolio-aliadrian.vercel.app/" target="_blank"
+        >Adrian Nasrat</a
+      >.
+    </div>
+    <script>
+      const userEmail = localStorage.getItem("userEmail");
+
+      if (userEmail) {
+        document.getElementById("userEmail").textContent = userEmail;
+      }
+
+      document.querySelector(".button").addEventListener("click", function () {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

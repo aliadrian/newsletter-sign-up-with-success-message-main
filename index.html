@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <div class="newsletter-cta">
+      <picture>
+        <source
+          media="(min-width: 650px)"
+          srcset="assets/images/illustration-sign-up-desktop.svg"
+        />
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="" />
+      </picture>
+
+      <div class="content">
+        <h1 class="title">Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul role="list" class="checkmark-list">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+
+        <form>
+          <div class="form-group with-error-field">
+            <label for="email">Email address</label>
+            <input placeholder="email@company.com" id="email" />
+            <span class="error">Email address required</span>
+          </div>
+
+          <button class="button" type="submit">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://portfolio-aliadrian.vercel.app/" target="_blank"
+        >Adrian Nasrat</a
+      >.
+    </div>
+
+    <script>
+      document
+        .querySelector("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          const emailInput = document.getElementById("email");
+          const errorSpan = document.querySelector(".error");
+
+          // Simple email regex for validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+          if (emailInput.value.trim() === "") {
+            // If the email field is empty
+            errorSpan.style.display = "block";
+            errorSpan.textContent = "Email address is required.";
+            emailInput.classList.add("invalid");
+          } else if (!emailRegex.test(emailInput.value)) {
+            errorSpan.style.display = "block";
+            errorSpan.textContent = "Enter a valid email address.";
+            emailInput.classList.add("invalid"); // Add the red border and text
+          } else {
+            // If the email is valid, remove any error message and redirect to thanks.html
+            errorSpan.style.display = "none";
+            emailInput.classList.remove("invalid");
+
+            localStorage.setItem("userEmail", emailInput.value);
+
+            window.location.href = "thanks.html";
+          }
+        });
+
+      // Reset styles and hide the error message when the input is focused or changed
+      const emailInput = document.getElementById("email");
+      emailInput.addEventListener("focus", function () {
+        this.classList.remove("invalid"); // Remove the 'invalid' class to reset styles
+        document.querySelector(".error").style.display = "none"; // Hide the error message
+      });
+
+      emailInput.addEventListener("input", function () {
+        this.classList.remove("invalid"); // Remove the 'invalid' class to reset styles
+        document.querySelector(".error").style.display = "none"; // Hide the error message
+      });
+    </script>
+  </body>
+</html>
