@@ -66,7 +66,7 @@ body {
   color: var(--clr-neutral-800);
   line-height: 1.5;
 
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
 }
 
@@ -175,7 +175,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 70vh;
+  height: 70dvh;
 }
 
 .newsletter-cta {
@@ -255,7 +255,7 @@ input::placeholder {
 
   .thanks-content {
     max-width: 450px;
-    height: 40vh;
+    height: 40dvh;
   }
 
   .attribution {
