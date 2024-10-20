@@ -43,8 +43,7 @@ Frontend Mentor challenges help you improve your coding skills by building reali
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
-  - [My process](#my-process)
-    - [Built with](#built-with)
+  - [Built with](#built-with)
   - [Author](#author)
   - [Run the project](#run-the-project)
 
@@ -63,9 +62,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](design/desktop_screenshot.PNG)
-
-## My process
+![](assets/images/desktop-preview.PNG)
 
 ### Built with
 
